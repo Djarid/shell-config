@@ -8,8 +8,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Enable consistent bash history across multiple sessions
-shopt -S histappend
-PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history-a; history -c; history -r"
+# Enable consistent single bash history across multiple sessions
+# shopt -S histappend
+# PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history-a; history -c; history -r"
 
-q:q
+# Enable per session bash history files (and increase history size)
+export HISTFILE=$HOME/.myhistfile.$$
